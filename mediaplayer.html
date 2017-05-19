@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
+        <script src="mediaplayer.js"></script>
+
+ </head>
+    <body>
+        <h1>Media Player</h1>
+        <main ng-app="MusicApp">
+            <section ng-controller="SongsController">
+                <ul>
+                   <li>
+                       <p>Song Title</p>
+                       <p> Artist Name</p>
+                       <p>Album Title</p>
+                       <p>Duration </p>
+                       <p>Cover Art</p>
+                   </li>    
+                   <li ng-repeat="song in songs"> 
+                        
+                        <button ng-click="play(song)">Play</button>
+                        <img ng-src="{{'image/-text.png'}}"/> 
+                        <p>{{song.song_title}}</p>
+                        <p>{{ song.artist_name}}</p>
+                        <p>{{ song.album_title }}</p>
+                        <p>{{ song.duration}}</p>
+                        <p>{{ song.cover_art }}</p>
+                   </li>
+                </ul>
+                <h1>Song Playing</h1>
+                <p>{{sgplay.song_title}} {{sgplay.artist_name}} {{sgplay.album_title}}</p>
+            </section>
+              
+        </main>
+    </body>
+</html>
